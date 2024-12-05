@@ -4,7 +4,8 @@
 
 #canvas{
     border: 5px solid black;
-    max-width: 40%;
+    max-width: 60%;
+    min-width: 400px;
     aspect-ratio: 1 /1;
 }
 
