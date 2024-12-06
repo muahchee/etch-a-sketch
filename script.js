@@ -50,8 +50,8 @@ function createCanvas(){
     for (let i = 0 ; i < allDrawSquares.length; i++){
 
     allDrawSquares[i].addEventListener("mouseenter", () => {
-        //generate random hex code
-        const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+        //generate random rgb code
+        const randomColor = "rgb" + `(${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)})`;
 
         allDrawSquares[i].style.backgroundColor = randomColor;
         
