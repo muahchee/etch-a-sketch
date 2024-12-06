@@ -1,4 +1,5 @@
-const dimension = 16;
+width = 16;
+height = 16;
 
 let drawSquare;
 let row;
@@ -20,17 +21,17 @@ function createRow(){
     row = document.createElement("div");
     row.setAttribute("class", "row");
 
-    for(let i = 1 ; i <= dimension ; i++){
+    for(let i = 1 ; i <= width ; i++){
         createDrawSquare();
         row.appendChild(drawSquare);
     }
 }
 
-//create full canvas (column of rows according to width dimensions)
+//create full canvas (column of rows according to height dimensions)
 function createCanvas(){
     canvas = document.querySelector("#canvas");
 
-    for(let j = 1 ; j <= dimension ; j++){
+    for(let j = 1 ; j <= height ; j++){
         createRow();
         canvas.appendChild(row);
     }
@@ -38,16 +39,48 @@ function createCanvas(){
 
 createCanvas();
 
-let i;
-
 let allDrawSquares = document.querySelectorAll(".draw-square");
 
-console.log(allDrawSquares);
-
-
+//enable 'drawing', drawSquares get filled in 
 for (let i = 0 ; i < allDrawSquares.length; i++){
-    console.log(allDrawSquares[i]);
-    allDrawSquares[i].addEventListener("mousedown", () => allDrawSquares[i].setAttribute("class", "fill-square")); 
+
+    allDrawSquares[i].addEventListener("mouseenter", () => 
+        allDrawSquares[i].setAttribute("class", "fill-square"));
 }
+
+const newCanvas = document.createElement("button");
+body = document.querySelector("body");
+
+//make "New Canvas" button
+newCanvas.textContent = "New Canvas";
+body.insertBefore(newCanvas, canvas);
+
+//delete the rows from canvas (retains #canvas)
+function deleteCanvas(){
+
+    canvas = document.querySelector("#canvas");
+
+    while(canvas.firstChild){
+        canvas.removeChild(canvas.lastChild);
+    }
+};
+
+function resetCanvas(){
+    deleteCanvas();
+
+    width = prompt("Enter a width!", 16);
+    height = prompt("Enter a height!", 16);
+
+    width = parseInt(width);
+    height = parseInt(height);
+
+    createCanvas();
+}
+
+newCanvas.addEventListener("click", resetCanvas);
+
+
+
+
 
 
