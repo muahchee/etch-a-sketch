@@ -42,6 +42,7 @@ function createCanvas(){
     //enable 'drawing', drawSquares get filled in 
     for (let i = 0 ; i < allDrawSquares.length; i++){
 
+        //fills a random color when hovered over
         allDrawSquares[i].addEventListener("mouseenter", () => {
 
             //generate random rgb code
@@ -52,6 +53,7 @@ function createCanvas(){
             console.log(randomColor);
         });
 
+        //increase opacity when hovered over
         allDrawSquares[i].addEventListener("mouseenter", (evt) => {
 
             evt.target.style.opacity = Number(evt.target.style.opacity) + 0.1;
@@ -60,7 +62,6 @@ function createCanvas(){
         });
     }
 }
-
 
 createCanvas();
 

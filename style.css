@@ -3,15 +3,17 @@
     background-color: bisque;
 }
 
-h1{
+h1, h2{
     color: #096b83;
     text-align: center;
+    margin: 0;
 }
 
 body{
     display: flex;;
     flex-direction: column;
-    align-items: center ;
+    align-items: center;
+    gap: 1rem;
 }
 
 button{
@@ -21,7 +23,6 @@ button{
 }
 
 #canvas{
-    margin-top: 1rem;
     border: 5px solid #096b83;
     border-radius: 5px;
     background-color: bisque;
