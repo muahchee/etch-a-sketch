@@ -72,9 +72,18 @@ function resetCanvas(){
 
     width = prompt("Enter a width!", 16);
     height = prompt("Enter a height!", 16);
-
     width = parseInt(width);
     height = parseInt(height);
+
+
+    while (width > 100 || height > 100){
+        alert("Please enter a number less than 100.");
+        width = prompt("Enter a width!", 16);
+        height = prompt("Enter a height!", 16);
+        width = parseInt(width);
+        height = parseInt(height);
+    }
+
 
     createCanvas();
 }
