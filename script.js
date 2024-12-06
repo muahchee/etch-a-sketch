@@ -27,7 +27,7 @@ function createRow(){
     }
 }
 
-//create full canvas (column of rows according to height dimensions)
+//create full canvas (column of rows according to height dimension)
 function createCanvas(){
     canvas = document.querySelector("#canvas");
 
@@ -38,13 +38,28 @@ function createCanvas(){
 
     let allDrawSquares = document.querySelectorAll(".draw-square");
 
+    const randomFill = () => {
+        const randomColor = Math.floor(Math.random()*16777215).toString(16);
+
+        drawSquare.style.backgroundColor = "'#' + randomColor";
+        
+        console.log(randomColor);
+    }
+
     //enable 'drawing', drawSquares get filled in 
     for (let i = 0 ; i < allDrawSquares.length; i++){
 
-    allDrawSquares[i].addEventListener("mouseenter", () => 
-        allDrawSquares[i].setAttribute("class", "fill-square"));
+    allDrawSquares[i].addEventListener("mouseenter", () => {
+        //generate random hex code
+        const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+
+        allDrawSquares[i].style.backgroundColor = randomColor;
+        
+        console.log(randomColor);
+    });
     }
 }
+
 
 createCanvas();
 
@@ -77,7 +92,7 @@ function resetCanvas(){
     }
 
     getInput();
-    
+
     //limits input to 100 or under
     while (width > 100 || height > 100){
         alert("Please enter a number less than 100.");
