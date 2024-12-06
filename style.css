@@ -3,9 +3,10 @@
     background-color: bisque;
 }
 
-h1, h2{
+h1, p{
     color: #096b83;
     text-align: center;
+    font-weight: bold;
     margin: 0;
 }
 
