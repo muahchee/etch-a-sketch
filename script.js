@@ -68,14 +68,13 @@ function deleteCanvas(){
 
 //ask for new dimensions and resets canvas
 function resetCanvas(){
-    deleteCanvas();
 
     width = prompt("Enter a width!", 16);
     height = prompt("Enter a height!", 16);
     width = parseInt(width);
     height = parseInt(height);
 
-
+    //limits input to 100 or under
     while (width > 100 || height > 100){
         alert("Please enter a number less than 100.");
         width = prompt("Enter a width!", 16);
@@ -84,6 +83,7 @@ function resetCanvas(){
         height = parseInt(height);
     }
 
+    deleteCanvas();
 
     createCanvas();
 }
