@@ -23,21 +23,17 @@ button{
 #canvas{
     margin-top: 1rem;
     border: 5px solid #096b83;
+    border-radius: 5px;
     background-color: bisque;
     max-width: 60%;
     min-width: 400px;
 }
 
-.draw-square , .fill-square{
+.draw-square{
     border: 1px solid #096b83;
     display: flex;
     flex: 1 1 20px;
     aspect-ratio: 1 / 1;
-
-}
-
-.fill-square{
-    background-color: rgb(255, 255, 255);
 }
 
 .row{
