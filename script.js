@@ -35,18 +35,19 @@ function createCanvas(){
         createRow();
         canvas.appendChild(row);
     }
+
+    let allDrawSquares = document.querySelectorAll(".draw-square");
+
+    //enable 'drawing', drawSquares get filled in 
+    for (let i = 0 ; i < allDrawSquares.length; i++){
+
+    allDrawSquares[i].addEventListener("mouseenter", () => 
+        allDrawSquares[i].setAttribute("class", "fill-square"));
+    }
 }
 
 createCanvas();
 
-let allDrawSquares = document.querySelectorAll(".draw-square");
-
-//enable 'drawing', drawSquares get filled in 
-for (let i = 0 ; i < allDrawSquares.length; i++){
-
-    allDrawSquares[i].addEventListener("mouseenter", () => 
-        allDrawSquares[i].setAttribute("class", "fill-square"));
-}
 
 const newCanvas = document.createElement("button");
 body = document.querySelector("body");
@@ -65,6 +66,7 @@ function deleteCanvas(){
     }
 };
 
+//ask for new dimensions and resets canvas
 function resetCanvas(){
     deleteCanvas();
 
