@@ -23,6 +23,7 @@ function createRow(){
 
     for(let i = 1 ; i <= width ; i++){
         createDrawSquare();
+        drawSquare.setAttribute("opacity", 0)
         row.appendChild(drawSquare);
     }
 }
@@ -51,6 +52,12 @@ function createCanvas(){
             console.log(randomColor);
         });
 
+        allDrawSquares[i].addEventListener("mouseenter", (evt) => {
+
+            evt.target.style.opacity = Number(evt.target.style.opacity) + 0.1;
+
+            console.log(evt.target.style.opacity);
+        });
     }
 }
 

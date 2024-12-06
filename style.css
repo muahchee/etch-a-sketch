@@ -30,7 +30,6 @@ button{
 }
 
 .draw-square{
-    border: 1px solid #096b83;
     display: flex;
     flex: 1 1 20px;
     aspect-ratio: 1 / 1;
