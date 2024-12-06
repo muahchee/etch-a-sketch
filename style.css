@@ -9,7 +9,7 @@
     aspect-ratio: 1 /1;
 }
 
-.draw-square{
+.draw-square , .fill-square{
     border: 1px solid black;
     display: flex;
     flex: 1 1 20px;
@@ -17,10 +17,16 @@
 
 }
 
+.fill-square{
+    background-color: black;
+    opacity: +0.1;
+}
+
 .row{
     display: flex;
     max-width: 100%;
-
 }
+
+
 
 

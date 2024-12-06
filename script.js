@@ -8,7 +8,11 @@ let canvas;
 function createDrawSquare(){
     drawSquare = document.createElement("div");
     drawSquare.setAttribute("class", "draw-square");
+}
 
+//change class to fill-square
+function fillSquare(){
+    drawSquare.setAttribute("class", "fill-square");
 }
 
 //create a row of draw squares according to width dimension
@@ -33,3 +37,17 @@ function createCanvas(){
 }
 
 createCanvas();
+
+let i;
+
+let allDrawSquares = document.querySelectorAll(".draw-square");
+
+console.log(allDrawSquares);
+
+
+for (let i = 0 ; i < allDrawSquares.length; i++){
+    console.log(allDrawSquares[i]);
+    allDrawSquares[i].addEventListener("mousedown", () => allDrawSquares[i].setAttribute("class", "fill-square")); 
+}
+
+
